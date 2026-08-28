@@ -57,11 +57,11 @@ export default function BestellungPage({ cart = [], onAddToCart }) {
     }
   };
 
-  // Sepetteki toplam ürün sayısı
   const totalCartCount = cart.reduce((sum, item) => sum + (item.quantity || 1), 0);
+  const totalPrice = cart.reduce((sum, item) => sum + (item.price * (item.quantity || 1)), 0);
 
   return (
-    <div className="bg-[#03081e] text-white min-h-screen pt-10 pb-32 font-sans relative">
+    <div className="bg-[#03081e] text-white min-h-screen pt-10 pb-36 font-sans relative">
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-[#3b82f6]/10 blur-[130px] pointer-events-none -z-10" />
 
       <div className="max-w-6xl mx-auto px-6 space-y-12">
@@ -70,7 +70,6 @@ export default function BestellungPage({ cart = [], onAddToCart }) {
           <p className="text-xs text-slate-400">Finde professionelle Designs für dein Projekt</p>
         </div>
 
-        {/* Kategoriler */}
         <div className="flex flex-wrap justify-center gap-2">
           {categories.map((cat) => (
             <button
@@ -87,7 +86,6 @@ export default function BestellungPage({ cart = [], onAddToCart }) {
           ))}
         </div>
 
-        {/* Ürün Listesi */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {filteredProducts.map((item) => {
             const isFav = favoriteIds.includes(item.id);
@@ -128,23 +126,26 @@ export default function BestellungPage({ cart = [], onAddToCart }) {
         </div>
       </div>
 
-      {/* Sepette ürün eklendiğinde görünen yüzen yönlendirme barı */}
       {totalCartCount > 0 && (
-        <div className="fixed bottom-6 left-1/2 -translate-x-1/2 w-[90%] max-w-md z-50">
+        <div className="fixed bottom-6 left-1/2 -translate-x-1/2 w-[92%] max-w-lg z-50">
           <Link
             to="/warenkorb"
-            className="w-full bg-[#1e2942]/90 hover:bg-[#3b82f6] text-white border border-[#1e2942] hover:border-[#7b96fc]/50 backdrop-blur-xl py-3.5 px-6 rounded-2xl shadow-2xl flex items-center justify-between transition-all duration-300 group"
+            className="w-full bg-[#03081e]/80 hover:bg-[#03081e]/95 text-white border border-[#3b82f6]/40 hover:border-[#3b82f6] backdrop-blur-2xl py-3.5 px-6 rounded-2xl shadow-2xl shadow-black/80 flex items-center justify-between transition-all duration-300 group"
           >
             <div className="flex items-center gap-3">
-              <ShoppingBag size={20} className="text-[#7b96fc] group-hover:text-white transition-colors" />
-              <span className="text-sm font-bold tracking-wide">
-                {totalCartCount} Artikel im Warenkorb
+              <div className="p-2 bg-[#3b82f6]/20 border border-[#3b82f6]/40 rounded-xl text-[#7b96fc] group-hover:scale-110 transition-transform">
+                <ShoppingBag size={18} />
+              </div>
+              <span className="text-xs md:text-sm font-extrabold tracking-wide text-slate-100">
+                {totalCartCount} Artikel <span className="text-[#7b96fc]">({totalPrice.toFixed(2).replace(".", ",")} €)</span>
               </span>
             </div>
 
-            <div className="flex items-center gap-2 border-l border-slate-700/60 group-hover:border-white/20 pl-4 transition-colors">
-              <span className="text-xs uppercase tracking-wider font-black text-slate-200 group-hover:text-white">ZUM WARENKORB</span>
-              <ArrowRight size={16} className="text-[#7b96fc] group-hover:text-white transition-colors" />
+            <div className="flex items-center gap-2 border-l border-slate-800 pl-4">
+              <span className="text-[11px] md:text-xs font-black tracking-wider uppercase text-slate-200 group-hover:text-[#7b96fc] transition-colors">
+                ZUM WARENKORB
+              </span>
+              <ArrowRight size={16} className="text-[#7b96fc] group-hover:translate-x-1 transition-transform" />
             </div>
           </Link>
         </div>
