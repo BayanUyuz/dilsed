@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route, Link, useLocation } from "react-router-dom";
 import LandingPage from "./Pages/LandingPage";
 import PortfolioPage from "./Pages/PortfolioPage";
@@ -17,6 +17,16 @@ import Impressum from "./Pages/Impressum";
 import AGBPage from "./Pages/AGBPage";
 import Footer from "./components/Footer";
 import logoImg from "./assets/banner.png";
+
+function ScrollToTop() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+}
 
 function Navigation({ cartCount }) {
   const location = useLocation();
@@ -116,6 +126,7 @@ export default function App() {
 
   return (
     <Router>
+      <ScrollToTop />
       <div className="min-h-screen bg-[#03081e] text-white flex flex-col justify-between font-sans selection:bg-[#3b82f6] selection:text-white">
         <div>
           <Navigation cartCount={totalCartCount} />

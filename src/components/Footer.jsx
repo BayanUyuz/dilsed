@@ -1,20 +1,18 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { Heart } from "lucide-react";
 
 export default function Footer() {
   return (
     <footer className="relative z-10 mt-24 border-t border-slate-800/80 bg-slate-950 py-16 text-xs text-slate-400">
       <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12">
-     
         <div>
           <h4 className="text-white font-black text-sm mb-2">DilSed Design</h4>
           <p className="text-[11px] text-slate-500 mb-6">
             © {new Date().getFullYear()} DilSed Design - Alle Rechte vorbehalten.
           </p>
           
-        
           <div className="flex items-center gap-4 text-slate-400">
-          
             <a 
               href="https://www.instagram.com/b.uyuz1907" 
               target="_blank" 
@@ -27,7 +25,6 @@ export default function Footer() {
               </svg>
             </a>
 
-          
             <a 
               href="https://www.twitch.tv/bayanuyuz/" 
               target="_blank" 
@@ -40,7 +37,6 @@ export default function Footer() {
               </svg>
             </a>
 
-         
             <a 
               href="https://youtube.com" 
               target="_blank" 
@@ -55,29 +51,23 @@ export default function Footer() {
           </div>
         </div>
 
-      
         <div>
-          <h5 className="text-white font-bold mb-4">Rechtliches & Infos</h5>
+          <h5 className="text-white font-bold mb-4">Rechtliches</h5>
           <ul className="space-y-2 text-[11px]">
-            <li><a href="#" className="hover:text-white transition-colors">AGB</a></li>
-            <li><a href="#" className="hover:text-white transition-colors">Datenschutz</a></li>
-            <li><a href="#" className="hover:text-white transition-colors">Impressum</a></li>
-            <li><a href="#" className="hover:text-white transition-colors">Über uns</a></li>
+            <li><Link to="/agb" className="hover:text-white transition-colors">AGB</Link></li>
+            <li><Link to="/impressum" className="hover:text-white transition-colors">Impressum</Link></li>
           </ul>
         </div>
 
-  
         <div>
           <h5 className="text-white font-bold mb-4">Kundenservice</h5>
           <ul className="space-y-2 text-[11px]">
-            <li><a href="#" className="hover:text-white transition-colors">FAQ</a></li>
-            <li><a href="#" className="hover:text-white transition-colors">Kontakt</a></li>
-            <li><a href="#" className="hover:text-white transition-colors">Zahlungsarten</a></li>
+            <li><Link to="/kontakt" className="hover:text-white transition-colors">Kontakt</Link></li>
+            <li><Link to="/checkout" className="hover:text-white transition-colors">Zahlungsarten</Link></li>
           </ul>
         </div>
       </div>
 
-   
       <div className="mt-12 border-t border-slate-900 pt-6 text-center text-slate-500 text-[11px]">
         <div className="flex items-center justify-center gap-1.5">
           Erstellt mit <Heart className="w-3.5 h-3.5 text-indigo-500 fill-indigo-500" /> — DilSed Design
