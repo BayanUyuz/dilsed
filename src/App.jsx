@@ -136,7 +136,7 @@ export default function App() {
             <Route path="/tutorials" element={<TutorialsPage />} />
             <Route path="/live" element={<LivePage />} />
             <Route path="/product/:id" element={<ProductDetailPage onAddToCart={handleAddToCart} />} />
-            <Route path="/bestellung" element={<BestellungPage cart={cart} />} />
+            <Route path="/bestellung" element={<BestellungPage cart={cart} onAddToCart={handleAddToCart} />} />
             <Route path="/checkout" element={<CheckoutPage cart={cart} />} />
             <Route path="/kontakt" element={<KontaktPage />} />
             <Route path="/login" element={<LoginPage />} />
