@@ -33,7 +33,7 @@ export default function LandingPage() {
             Professionelles Logo-Design, Grafikdesign und Social-Media-Kits - alles an einem Ort. Transparent, schnell und mit Leidenschaft.
           </p>
           <div className="flex flex-wrap items-center gap-4">
-            <Link to="/kasse" className="neon-btn px-7 py-3.5 text-xs uppercase tracking-wider flex items-center gap-2">
+            <Link to="/bestellung" className="neon-btn px-7 py-3.5 text-xs uppercase tracking-wider flex items-center gap-2">
               Jetzt bestellen <ArrowRight size={16} />
             </Link>
             <Link to="/portfolio" className="px-7 py-3.5 text-xs font-bold uppercase border border-slate-800 hover:border-slate-600 rounded-xl transition-all">
