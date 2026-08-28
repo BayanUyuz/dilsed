@@ -9,7 +9,7 @@ export default function Footer() {
         <div>
           <h4 className="text-white font-black text-sm mb-2">DilSed Design</h4>
           <p className="text-[11px] text-slate-500 mb-6">
-            © {new Date().getFullYear()} DilSed Design - Tüm hakları saklıdır.
+            © {new Date().getFullYear()} DilSed Design - Alle Rechte vorbehalten.
           </p>
           
         
@@ -57,22 +57,22 @@ export default function Footer() {
 
       
         <div>
-          <h5 className="text-white font-bold mb-4">Bilgilendirme</h5>
+          <h5 className="text-white font-bold mb-4">Rechtliches & Infos</h5>
           <ul className="space-y-2 text-[11px]">
-            <li><a href="#" className="hover:text-white transition-colors">AGB's</a></li>
+            <li><a href="#" className="hover:text-white transition-colors">AGB</a></li>
             <li><a href="#" className="hover:text-white transition-colors">Datenschutz</a></li>
             <li><a href="#" className="hover:text-white transition-colors">Impressum</a></li>
-            <li><a href="#" className="hover:text-white transition-colors">Hakkımızda</a></li>
+            <li><a href="#" className="hover:text-white transition-colors">Über uns</a></li>
           </ul>
         </div>
 
   
         <div>
-          <h5 className="text-white font-bold mb-4">Müşteri Hizmetleri</h5>
+          <h5 className="text-white font-bold mb-4">Kundenservice</h5>
           <ul className="space-y-2 text-[11px]">
-            <li><a href="#" className="hover:text-white transition-colors">SSS</a></li>
-            <li><a href="#" className="hover:text-white transition-colors">İletişim</a></li>
-            <li><a href="#" className="hover:text-white transition-colors">Ödeme Seçenekleri</a></li>
+            <li><a href="#" className="hover:text-white transition-colors">FAQ</a></li>
+            <li><a href="#" className="hover:text-white transition-colors">Kontakt</a></li>
+            <li><a href="#" className="hover:text-white transition-colors">Zahlungsarten</a></li>
           </ul>
         </div>
       </div>
@@ -80,7 +80,7 @@ export default function Footer() {
    
       <div className="mt-12 border-t border-slate-900 pt-6 text-center text-slate-500 text-[11px]">
         <div className="flex items-center justify-center gap-1.5">
-          Made with <Heart className="w-3.5 h-3.5 text-indigo-500 fill-indigo-500" /> — DilSed Design
+          Erstellt mit <Heart className="w-3.5 h-3.5 text-indigo-500 fill-indigo-500" /> — DilSed Design
         </div>
       </div>
     </footer>

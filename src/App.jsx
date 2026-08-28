@@ -13,6 +13,8 @@ import WarenkorbPage from "./Pages/WarenkorbPage";
 import BestellungPage from "./Pages/BestellungPage";
 import CheckoutPage from "./Pages/CheckoutPage";
 import ProductDetailPage from "./Pages/ProductDetailPage";
+import Impressum from "./Pages/Impressum";
+import AGBPage from "./Pages/AGBPage";
 import Footer from "./components/Footer";
 import logoImg from "./assets/banner.png";
 
@@ -131,6 +133,8 @@ export default function App() {
             <Route path="/profile" element={<ProfilePage />} />
             <Route path="/favoriten" element={<FavoritenPage />} />
             <Route path="/warenkorb" element={<WarenkorbPage cart={cart} setCart={setCart} />} />
+            <Route path="/impressum" element={<Impressum />} />
+            <Route path="/agb" element={<AGBPage />} />
           </Routes>
         </div>
         <Footer />
