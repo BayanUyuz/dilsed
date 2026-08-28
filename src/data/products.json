@@ -1,0 +1,83 @@
+[
+  {
+    "id": "neon-cyber-overlay",
+    "name": "Neon Cyber Overlay Pack",
+    "description": "Full animated Stream Overlay Pack mit Alert-Boxen, Webcam Frame und Screens.",
+    "price": 29.99,
+    "category": "Overlays",
+    "stock": 12,
+    "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=600&q=80"
+  },
+  {
+    "id": "custom-mascot-logo",
+    "name": "Custom Mascot Logo Design",
+    "description": "Handgezeichnetes, individuelles Vektor-Logo im Anime & Gamer Style.",
+    "price": 89.99,
+    "category": "Logos",
+    "stock": 3,
+    "image": "https://images.unsplash.com/photo-1563089145-599997674d42?w=600&q=80"
+  },
+  {
+    "id": "vtuber-2d-chibi",
+    "name": "VTuber Chibi Model + Rigging",
+    "description": "Ready-to-use 2D VTuber Avatar inklusive voll funktionstüchtigem Live2D Rigging.",
+    "price": 149.99,
+    "category": "VTuber",
+    "stock": 0,
+    "image": "https://images.unsplash.com/photo-1578632767115-351597cf2477?w=600&q=80"
+  },
+  {
+    "id": "kawaii-emote-bundle",
+    "name": "Kawaii Chibi Emote Pack (6x)",
+    "description": "6 süße, benutzerdefinierte Emotes für deinen Twitch & Discord Channel.",
+    "price": 19.99,
+    "category": "Emotes",
+    "stock": 25,
+    "image": "https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?w=600&q=80"
+  },
+  {
+    "id": "youtube-header-art",
+    "name": "Anime Channel Banner Art",
+    "description": "Professionell gestaltetes Channel Banner optimiert für YouTube & Twitter.",
+    "price": 34.99,
+    "category": "Banners",
+    "stock": 2,
+    "image": "https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=600&q=80"
+  },
+  {
+    "id": "pixel-sub-badges",
+    "name": "Pixel Art Sub Badges Set",
+    "description": "6x Retro Sub-Badges im Pixel-Art Style für Subscriber Tier 1 bis Tier 3.",
+    "price": 14.99,
+    "category": "Emotes",
+    "stock": 18,
+    "image": "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=600&q=80"
+  },
+  {
+    "id": "yt-thumbnail-bundle",
+    "name": "Clickbait Thumbnail Templates",
+    "description": "5x Photoshop (PSD) Vorlagen für klickstarke Gaming & Vlog Thumbnails.",
+    "price": 12.99,
+    "category": "Thumbnails",
+    "stock": 50,
+    "image": "https://images.unsplash.com/photo-1511512578047-dfb367046420?w=600&q=80"
+  },
+  {
+    "id": "stinger-transition-3d",
+    "name": "3D Sci-Fi Stinger Transition",
+    "description": "Nahtlose OBS Szenenübergänge mit Custom Sound-Effekten.",
+    "price": 22.50,
+    "category": "Overlays",
+    "stock": 1,
+    "image": "https://images.unsplash.com/photo-1538481199705-c710c4e965fc?w=600&q=80"
+  },
+  {
+    "id": "minimal-text-logo",
+    "name": "Esports Typography Logo",
+    "description": "",
+    "price": 45.00,
+    "category": "Logos",
+    "stock": 5,
+    "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=600&q=80"
+  }
+]
