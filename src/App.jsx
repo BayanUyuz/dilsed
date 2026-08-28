@@ -1,19 +1,20 @@
 import React, { useState } from "react";
 import { BrowserRouter as Router, Routes, Route, Link, useLocation } from "react-router-dom";
-import LandingPage from "./pages/LandingPage";
-import PortfolioPage from "./pages/PortfolioPage";
-import TutorialsPage from "./pages/TutorialsPage";
-import LivePage from "./pages/LivePage";
-import KontaktPage from "./pages/KontaktPage";
-import LoginPage from "./pages/LoginPage";
-import RegisterPage from "./pages/RegisterPage";
-import ProfilePage from "./pages/ProfilePage";
-import FavoritenPage from "./pages/FavoritenPage";
-import WarenkorbPage from "./pages/WarenkorbPage";
-import BestellungPage from "./pages/BestellungPage";
-import CheckoutPage from "./pages/CheckoutPage";
-import ProductDetailPage from "./pages/ProductDetailPage";
-import Footer from "./components/Footer";
+import LandingPage from "./LandingPage";
+import PortfolioPage from "./PortfolioPage";
+import TutorialsPage from "./TutorialsPage";
+import LivePage from "./LivePage";
+import KontaktPage from "./KontaktPage";
+import LoginPage from "./LoginPage";
+import RegisterPage from "./RegisterPage";
+import ProfilePage from "./ProfilePage";
+import FavoritenPage from "./FavoritenPage";
+import WarenkorbPage from "./WarenkorbPage";
+import BestellungPage from "./BestellungPage";
+import CheckoutPage from "./CheckoutPage";
+import ProductDetailPage from "./ProductDetailPage";
+import Footer from "./Footer";
+import logoImg from "./assets/banner.png";
 
 function Navigation({ cartCount }) {
   const location = useLocation();
@@ -30,15 +31,19 @@ function Navigation({ cartCount }) {
   return (
     <header className="sticky top-0 z-50 bg-[#03081e]/90 backdrop-blur-md border-b border-[#1e2942]/60 shadow-lg shadow-black/20 font-sans">
       <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-        <Link to="/" className="flex items-center gap-3 group">
-          <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-[#3b82f6] to-[#7b96fc] flex items-center justify-center font-black text-white shadow-lg shadow-[#3b82f6]/30 group-hover:scale-105 transition-transform">
-            DS
-          </div>
+        {/* Logo - Tıklandığında Ana Sayfaya (LandingPage) Gider */}
+        <Link to="/" className="flex items-center gap-3 group cursor-pointer">
+          <img 
+            src={logoImg} 
+            alt="DilSed Design Logo" 
+            className="h-10 w-auto object-contain group-hover:scale-105 transition-transform" 
+          />
           <span className="font-black text-lg tracking-wider text-white">
             DilSed <span className="text-[#7b96fc] text-xs block font-normal -mt-1">DESIGN</span>
           </span>
         </Link>
 
+        {/* Linkler */}
         <nav className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => {
             const isActive = location.pathname === link.path;
@@ -58,6 +63,7 @@ function Navigation({ cartCount }) {
           })}
         </nav>
 
+        {/* Sağ Butonlar */}
         <div className="flex items-center gap-4 text-slate-300">
           <Link to="/login" className="p-2 hover:bg-[#1e2942] hover:text-white rounded-xl transition-colors" aria-label="Anmelden">
             <svg className="w-5 h-5 fill-none stroke-current stroke-2" viewBox="0 0 24 24">
@@ -93,7 +99,6 @@ function Navigation({ cartCount }) {
 export default function App() {
   const [cart, setCart] = useState([]);
 
-  // Sepete ürün ekleme fonksiyonu
   const handleAddToCart = (productWithQty) => {
     setCart((prevCart) => {
       const existing = prevCart.find((item) => item.id === productWithQty.id);
