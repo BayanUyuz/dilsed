@@ -1,19 +1,19 @@
 import React, { useState } from "react";
 import { BrowserRouter as Router, Routes, Route, Link, useLocation } from "react-router-dom";
-import LandingPage from "./LandingPage";
-import PortfolioPage from "./PortfolioPage";
-import TutorialsPage from "./TutorialsPage";
-import LivePage from "./LivePage";
-import KontaktPage from "./KontaktPage";
-import LoginPage from "./LoginPage";
-import RegisterPage from "./RegisterPage";
-import ProfilePage from "./ProfilePage";
-import FavoritenPage from "./FavoritenPage";
-import WarenkorbPage from "./WarenkorbPage";
-import BestellungPage from "./BestellungPage";
-import CheckoutPage from "./CheckoutPage";
-import ProductDetailPage from "./ProductDetailPage";
-import Footer from "./Footer";
+import LandingPage from "./Pages/LandingPage";
+import PortfolioPage from "./Pages/PortfolioPage";
+import TutorialsPage from "./Pages/TutorialsPage";
+import LivePage from "./Pages/LivePage";
+import KontaktPage from "./Pages/KontaktPage";
+import LoginPage from "./Pages/LoginPage";
+import RegisterPage from "./Pages/RegisterPage";
+import ProfilePage from "./Pages/ProfilePage";
+import FavoritenPage from "./Pages/FavoritenPage";
+import WarenkorbPage from "./Pages/WarenkorbPage";
+import BestellungPage from "./Pages/BestellungPage";
+import CheckoutPage from "./Pages/CheckoutPage";
+import ProductDetailPage from "./Pages/ProductDetailPage";
+import Footer from "./components/Footer";
 import logoImg from "./assets/banner.png";
 
 function Navigation({ cartCount }) {
@@ -31,7 +31,6 @@ function Navigation({ cartCount }) {
   return (
     <header className="sticky top-0 z-50 bg-[#03081e]/90 backdrop-blur-md border-b border-[#1e2942]/60 shadow-lg shadow-black/20 font-sans">
       <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-        {/* Logo - Tıklandığında Ana Sayfaya (LandingPage) Gider */}
         <Link to="/" className="flex items-center gap-3 group cursor-pointer">
           <img 
             src={logoImg} 
@@ -43,7 +42,6 @@ function Navigation({ cartCount }) {
           </span>
         </Link>
 
-        {/* Linkler */}
         <nav className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => {
             const isActive = location.pathname === link.path;
@@ -63,7 +61,6 @@ function Navigation({ cartCount }) {
           })}
         </nav>
 
-        {/* Sağ Butonlar */}
         <div className="flex items-center gap-4 text-slate-300">
           <Link to="/login" className="p-2 hover:bg-[#1e2942] hover:text-white rounded-xl transition-colors" aria-label="Anmelden">
             <svg className="w-5 h-5 fill-none stroke-current stroke-2" viewBox="0 0 24 24">
