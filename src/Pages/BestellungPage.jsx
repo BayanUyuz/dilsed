@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { ShoppingBag, Heart, ArrowRight, X, Check, ShieldCheck, Sparkles } from "lucide-react";
+import { ShoppingBag, Heart, ArrowRight, X, Check, ShieldCheck, Sparkles, Package } from "lucide-react";
 
 export default function BestellungPage({ cart = [], onAddToCart }) {
   const [activeCategory, setActiveCategory] = useState("Alle");
@@ -11,25 +11,25 @@ export default function BestellungPage({ cart = [], onAddToCart }) {
   const categories = ["Alle", "Logo-Design", "Traumlogos", "Grafik-Design", "Social-Media-Kits"];
 
   const products = [
-    { id: 1, title: "Logo Design 1", price: 149.00, category: "Logo-Design", img: "https://i.imgur.com/gyaXWoQ.png", desc: "Professionelles Logo-Design angepasst an deine Marke. Enthält Vektordateien (AI, EPS, PNG) und alle kommerziellen Nutzungsrechte." },
-    { id: 2, title: "Logo Design 2", price: 179.00, category: "Logo-Design", img: "https://i.imgur.com/66v67gl.png", desc: "Einzigartiges und modernes Logo-Design mit unbegrenzten Überarbeitungen bis zur vollkommenen Zufriedenheit." },
-    { id: 3, title: "Logo Design 3", price: 199.00, category: "Logo-Design", img: "https://i.imgur.com/WbqsurH.png", desc: "Exklusives Design inklusive Social-Media-Varianten und Branding-Guide für einheitliche Auftritte." },
-    { id: 4, title: "Logo Design 4", price: 249.00, category: "Logo-Design", img: "https://i.imgur.com/3M8GaBg.png", desc: "High-End Corporate Logo für professionelle Ansprüche. Inklusive 3D-Mockups und Quelldateien." },
-    { id: 5, title: "Logo Design 5", price: 299.00, category: "Logo-Design", img: "https://i.imgur.com/9lcehSj.png", desc: "Komplettes Premium-Branding mit Logo, Farbpalette und Typografie-Konzept." },
+    { id: 1, title: "Logo Design 1", price: 149.00, category: "Logo-Design", img: "https://i.imgur.com/gyaXWoQ.png", desc: "Professionelles Logo-Design angepasst an deine Marke. Enthält Vektordateien (AI, EPS, PNG) und alle kommerziellen Nutzungsrechte.", stock: 5 },
+    { id: 2, title: "Logo Design 2", price: 179.00, category: "Logo-Design", img: "https://i.imgur.com/66v67gl.png", desc: "Einzigartiges und modernes Logo-Design mit unbegrenzten Überarbeitungen bis zur vollkommenen Zufriedenheit.", stock: 3 },
+    { id: 3, title: "Logo Design 3", price: 199.00, category: "Logo-Design", img: "https://i.imgur.com/WbqsurH.png", desc: "Exklusives Design inklusive Social-Media-Varianten und Branding-Guide für einheitliche Auftritte.", stock: 8 },
+    { id: 4, title: "Logo Design 4", price: 249.00, category: "Logo-Design", img: "https://i.imgur.com/3M8GaBg.png", desc: "High-End Corporate Logo für professionelle Ansprüche. Inklusive 3D-Mockups und Quelldateien.", stock: 2 },
+    { id: 5, title: "Logo Design 5", price: 299.00, category: "Logo-Design", img: "https://i.imgur.com/9lcehSj.png", desc: "Komplettes Premium-Branding mit Logo, Farbpalette und Typografie-Konzept.", stock: 4 },
 
-    { id: 6, title: "Traumlogo Premium 1", price: 299.00, category: "Traumlogos", img: "https://i.imgur.com/sJmTVlt.png", desc: "Traumhaftes Mascot- & Illustration-Logo. Perfekt für Streamer, Gaming-Teams und Content Creator." },
-    { id: 7, title: "Traumlogo Premium 2", price: 349.00, category: "Traumlogos", img: "https://i.imgur.com/BRWoKUf.png", desc: "Exklusives Mascot Logo mit detailreichen Schattierungen und High-Res Exporten." },
-    { id: 8, title: "Traumlogo Premium 3", price: 399.00, category: "Traumlogos", img: "https://i.imgur.com/XV11w14.png", desc: "Full Custom Branding Package inklusive Stream Overlays und Logo Animation." },
-    { id: 9, title: "Traumlogo Premium 4", price: 499.00, category: "Traumlogos", img: "https://i.imgur.com/9VGcXtk.png", desc: "Ultimatives Design Package für eSports Teams und professionelle Creator." },
+    { id: 6, title: "Traumlogo Premium 1", price: 299.00, category: "Traumlogos", img: "https://i.imgur.com/sJmTVlt.png", desc: "Traumhaftes Mascot- & Illustration-Logo. Perfekt für Streamer, Gaming-Teams und Content Creator.", stock: 6 },
+    { id: 7, title: "Traumlogo Premium 2", price: 349.00, category: "Traumlogos", img: "https://i.imgur.com/BRWoKUf.png", desc: "Exklusives Mascot Logo mit detailreichen Schattierungen und High-Res Exporten.", stock: 3 },
+    { id: 8, title: "Traumlogo Premium 3", price: 399.00, category: "Traumlogos", img: "https://i.imgur.com/XV11w14.png", desc: "Full Custom Branding Package inklusive Stream Overlays und Logo Animation.", stock: 2 },
+    { id: 9, title: "Traumlogo Premium 4", price: 499.00, category: "Traumlogos", img: "https://i.imgur.com/9VGcXtk.png", desc: "Ultimatives Design Package für eSports Teams und professionelle Creator.", stock: 1 },
 
-    { id: 10, title: "Grafik Design Banner", price: 49.00, category: "Grafik-Design", img: "https://i.imgur.com/QkXRFQz.png", desc: "Hochwertiges Banner für Social Media, Twitch oder YouTube." },
-    { id: 11, title: "Grafik Design Ilustrasyon", price: 59.00, category: "Grafik-Design", img: "https://i.imgur.com/qwfVPPe.png", desc: "Individuelle digitale Illustration nach deinen Wünschen." },
-    { id: 12, title: "Grafik Design Artwork", price: 69.00, category: "Grafik-Design", img: "https://i.imgur.com/WaOohA1.png", desc: "Kreatives Digital Artwork für Promo-Materialien oder Alben." },
-    { id: 13, title: "Grafik Design Poster", price: 79.00, category: "Grafik-Design", img: "https://i.imgur.com/VtBzU2u.png", desc: "Druckfertiges Poster-Design in höchster Auflösung." },
+    { id: 10, title: "Grafik Design Banner", price: 49.00, category: "Grafik-Design", img: "https://i.imgur.com/QkXRFQz.png", desc: "Hochwertiges Banner für Social Media, Twitch oder YouTube.", stock: 10 },
+    { id: 11, title: "Grafik Design Ilustrasyon", price: 59.00, category: "Grafik-Design", img: "https://i.imgur.com/qwfVPPe.png", desc: "Individuelle digitale Illustration nach deinen Wünschen.", stock: 7 },
+    { id: 12, title: "Grafik Design Artwork", price: 69.00, category: "Grafik-Design", img: "https://i.imgur.com/WaOohA1.png", desc: "Kreatives Digital Artwork für Promo-Materialien oder Alben.", stock: 5 },
+    { id: 13, title: "Grafik Design Poster", price: 79.00, category: "Grafik-Design", img: "https://i.imgur.com/VtBzU2u.png", desc: "Druckfertiges Poster-Design in höchster Auflösung.", stock: 9 },
 
-    { id: 19, title: "Twitch / Stream Kit", price: 129.00, category: "Social-Media-Kits", img: "https://i.imgur.com/MkB4hD7.png", desc: "Komplettes Stream Overlay Kit (Screens, Panels, Alerts, Facecam)." },
-    { id: 20, title: "Social Media Branding Kit", price: 179.00, category: "Social-Media-Kits", img: "https://i.imgur.com/8BE8OOK.png", desc: "Einheitlicher Auftritt für Instagram, Twitter/X und YouTube." },
-    { id: 21, title: "Full Channel Overhauls Kit", price: 249.00, category: "Social-Media-Kits", img: "https://i.imgur.com/ORs738E.png", desc: "Das komplette Redesign für deinen gesamten Online-Auftritt." }
+    { id: 19, title: "Twitch / Stream Kit", price: 129.00, category: "Social-Media-Kits", img: "https://i.imgur.com/MkB4hD7.png", desc: "Komplettes Stream Overlay Kit (Screens, Panels, Alerts, Facecam).", stock: 4 },
+    { id: 20, title: "Social Media Branding Kit", price: 179.00, category: "Social-Media-Kits", img: "https://i.imgur.com/8BE8OOK.png", desc: "Einheitlicher Auftritt für Instagram, Twitter/X und YouTube.", stock: 6 },
+    { id: 21, title: "Full Channel Overhauls Kit", price: 249.00, category: "Social-Media-Kits", img: "https://i.imgur.com/ORs738E.png", desc: "Das komplette Redesign für deinen gesamten Online-Auftritt.", stock: 3 }
   ];
 
   const filteredProducts = activeCategory === "Alle" 
@@ -73,6 +73,7 @@ export default function BestellungPage({ cart = [], onAddToCart }) {
           <p className="text-xs text-slate-400">Finde professionelle Designs für dein Projekt</p>
         </div>
 
+        {/* Kategoriler */}
         <div className="flex flex-wrap justify-center gap-2">
           {categories.map((cat) => (
             <button
@@ -89,6 +90,7 @@ export default function BestellungPage({ cart = [], onAddToCart }) {
           ))}
         </div>
 
+        {/* Ürün Listesi */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {filteredProducts.map((item) => {
             const isFav = favoriteIds.includes(item.id);
@@ -100,6 +102,13 @@ export default function BestellungPage({ cart = [], onAddToCart }) {
               >
                 <div className="h-36 rounded-xl overflow-hidden mb-3 bg-[#03081e]/60 border border-slate-700/30 relative">
                   <img src={item.img} alt={item.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                  
+                  {/* Stok Rozeti (Kart Üzerinde) */}
+                  <span className="absolute bottom-2 left-2 px-2 py-0.5 bg-black/60 backdrop-blur-md border border-white/10 rounded-md text-[10px] font-medium text-emerald-400 flex items-center gap-1">
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                    {item.stock} auf Lager
+                  </span>
+
                   <button
                     onClick={(e) => toggleFavorite(e, item.id)}
                     className={`absolute top-2 right-2 p-2 rounded-xl backdrop-blur-md transition-all border cursor-pointer ${
@@ -129,6 +138,7 @@ export default function BestellungPage({ cart = [], onAddToCart }) {
         </div>
       </div>
 
+      {/* Ürün Detay Modalı */}
       {selectedProduct && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md">
           <div className="bg-[#0a1128] border border-[#1e2942] w-full max-w-2xl rounded-3xl p-6 md:p-8 relative shadow-2xl space-y-6">
@@ -147,9 +157,15 @@ export default function BestellungPage({ cart = [], onAddToCart }) {
 
               <div className="space-y-4">
                 <div>
-                  <span className="text-[10px] uppercase font-bold text-[#7b96fc] tracking-wider bg-[#3b82f6]/10 px-2.5 py-1 rounded-md border border-[#3b82f6]/20">
-                    {selectedProduct.category}
-                  </span>
+                  <div className="flex items-center justify-between">
+                    <span className="text-[10px] uppercase font-bold text-[#7b96fc] tracking-wider bg-[#3b82f6]/10 px-2.5 py-1 rounded-md border border-[#3b82f6]/20">
+                      {selectedProduct.category}
+                    </span>
+                    {/* Modal İçinde Stok Durumu */}
+                    <span className="text-[11px] font-semibold text-emerald-400 flex items-center gap-1.5 bg-emerald-500/10 px-2.5 py-1 rounded-md border border-emerald-500/20">
+                      <Package size={13} /> {selectedProduct.stock} auf Lager
+                    </span>
+                  </div>
                   <h2 className="text-xl font-black mt-2">{selectedProduct.title}</h2>
                   <div className="text-xl font-black text-[#7b96fc] mt-1">
                     {selectedProduct.price.toFixed(2).replace(".", ",")} €
@@ -197,6 +213,7 @@ export default function BestellungPage({ cart = [], onAddToCart }) {
         </div>
       )}
 
+      {/* Alt Sepet Barı */}
       {totalCartCount > 0 && (
         <div className="fixed bottom-6 left-1/2 -translate-x-1/2 w-[92%] max-w-lg z-40">
           <Link
